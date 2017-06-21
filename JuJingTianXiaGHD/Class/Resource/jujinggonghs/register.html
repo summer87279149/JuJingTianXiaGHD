@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="css/style.css"/>
+<title>注册</title>
+<!--移动端版本兼容 -->
+<script type="text/javascript">
+         var phoneWidth =  parseInt(window.screen.width);
+         var phoneScale = phoneWidth/640;
+         var ua = navigator.userAgent;
+         if (/Android (\d+\.\d+)/.test(ua)){
+                   var version = parseFloat(RegExp.$1);
+                   if(version>2.3){
+                            document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+                   }else{
+                            document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+                   }
+         } else {
+                   document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+         }
+</script>
+<!--移动端版本兼容 end -->
+<script type="text/javascript"> 
+var countdown=60; 
+function settime(obj) { 
+    if (countdown == 0) { 
+        obj.removeAttribute("disabled");    
+        obj.value="获取验证码"; 
+        countdown = 60; 
+        return;
+    } else { 
+        obj.setAttribute("disabled", true); 
+        obj.value="重新发送(" + countdown + ")"; 
+        countdown--; 
+    } 
+setTimeout(function() { 
+    settime(obj) }
+    ,1000) 
+}
+  
+</script>
+  <link href="css/bootstrap.css" rel="stylesheet">
+</head>
+
+<body bgcolor="#ececec">
+<div id="ghs_header">
+<div class="pro_return"><a href="login.html"><img src="img/return.png" border="0"></a></div>
+<div class="gys_title">注 册</div>
+<div class="in_xiaoxi"><div class="pro_sousuo"></div></div>
+</div>
+<div style="margin-top:88px; float:left; width:100%;"></div>
+<div class="login_main"></div>
+<div class="reguster_mianbg">
+<table width="100%" border="0" style=" line-height:90px; font-size:1.5em;">
+      <tr>
+        <td width="29%" align="right">申请人名称：</td>
+        <td colspan="2"><input name="textarea2" type="text" id="textarea2" style=" width:96%;height:60px;line-height:35px;line-height:35px; font-size:1em; font-family:'微软雅黑'; padding-left:2%;padding-right:2%;border:1px solid #04a3e5; float:left;" placeholder="请输入申请人名称" /></td>
+      </tr>
+      <tr>
+        <td align="right">手机号：</td>
+        <td colspan="2"><input name="textarea2" type="text" id="textarea2" style=" width:96%;height:60px;line-height:35px; font-size:1em; font-family:'微软雅黑'; padding-left:2%;padding-right:2%;border:1px solid #04a3e5; float:left;" placeholder="请输入手机号" /></td>
+      </tr>
+      <tr>
+        <td align="right">密码：</td>
+        <td colspan="2"><input name="textarea2" type="text" id="textarea2" style=" width:96%;height:60px;line-height:35px; font-size:1em; font-family:'微软雅黑'; padding-left:2%;padding-right:2%;border:1px solid #04a3e5; float:left;" placeholder="请输入密码" /></td>
+      </tr>
+      <tr>
+        <td align="right">二次密码：</td>
+        <td colspan="2"><input name="textarea2" type="text" id="textarea2" style=" width:96%;height:60px;line-height:35px; font-size:1em; font-family:'微软雅黑'; padding-left:2%;padding-right:2%;border:1px solid #04a3e5;float:left;" placeholder="请再次输入密码" /></td>
+      </tr>
+      <tr>
+        <td height="97" align="right" >验证码：</td>
+        <td width="38%"><input name="textarea" type="text" id="textarea" style=" width:90%; height:60px;line-height:35px; font-size:1em; font-family:'微软雅黑'; padding-left:2%;padding-right:2%;border:1px solid #04a3e5;float:left;" placeholder="请输入验证码" /></td>
+        <td width="33%"><input type="button" id="btn" value="获取验证码" onclick="settime(this)"  readonly="readonly" style=" font-size:25px;"/></td>
+      </tr>
+      <tr>
+        <td colspan="3" align="right"><a href="#" style="color:#fff"><div class="ymm_button">完成注册</div></a></td>
+      </tr>
+    </table>
+
+</div>
+</div>
+<div style="width:100%; height:30px; float:left;"></div>
+</body>
+</html>

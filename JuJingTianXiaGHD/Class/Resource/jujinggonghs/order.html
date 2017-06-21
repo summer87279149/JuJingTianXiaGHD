@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="css/style.css"/>
+     <link rel="stylesheet" href="css/demo1.css">   
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    
+<title>订单管理</title>
+
+<!--移动端版本兼容 -->
+<script type="text/javascript">
+         var phoneWidth =  parseInt(window.screen.width);
+         var phoneScale = phoneWidth/640;
+         var ua = navigator.userAgent;
+         if (/Android (\d+\.\d+)/.test(ua)){
+                   var version = parseFloat(RegExp.$1);
+                   if(version>2.3){
+                            document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+                   }else{
+                            document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+                   }
+         } else {
+                   document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+         }
+</script>
+<!--移动端版本兼容 end -->
+ <script>
+        $(function() {
+            $(".tab a").click(function() {
+                $(this).addClass('curr').siblings().removeClass('curr');
+                var index = $(this).index();
+                number = index;
+                $('.nav .content li').hide();
+                $('.nav .content li:eq(' + index + ')').show();
+            });
+        })
+    </script>
+</head>
+
+<body bgcolor="#ececec">
+<!--头部-->
+<div id="ghs_header">
+<div class="pro_return"><a href="index.html"><img src="img/return.png" border="0"></a></div>
+<div class="gys_title">订单管理</div>
+<div class="in_xiaoxi"><div class="pro_sousuo"><a href="search.html"><font color="#FFFFFF">搜索</font></a></div></div>
+</div>
+<div style="margin-top:88px; float:left; width:100%;"></div>
+
+<div class="nav">
+  <div class="tab border-b">
+    <ul class="icon_lists clear">
+      <a href="javascript:;" class="curr">
+        <li><div >待发货</div>
+          <div class="name">0</div>
+        </li>
+      </a> <a href="javascript:;">
+          <li> <div >统配订单</div>
+            <div class="name">0</div>
+          </li>
+          </a> <a href="javascript:;">
+            <li><div >已发货</div>
+              <div class="name">0</div>
+            </li>
+            </a> <a href="javascript:;">
+              <li> <div >交易完成</div>
+                <div class="name">902</div>
+              </li>
+              </a> <a href="javascript:;">
+                <li> <div >已取消</div>
+                  <div class="name">110</div>
+                </li>
+                </a>
+    </ul>
+  </div>
+  <div class="content">
+<ul>
+            <li style="display: block">
+            <div style="width:100%; height:20px; background-color:#ececec; float:left"></div>
+            <div id="order_main"><img src="img/order.png"><span>抱歉，您还未有此类的订单信息</span></div>
+            </li>
+            <li>
+             <div style="width:100%; height:20px; background-color:#ececec; float:left"></div>
+            <div id="order_main"><img src="img/order.png"><span>抱歉，您还未有此类的订单信息</span></div>
+              </li>
+               <li>
+              <div style="width:100%; height:20px; background-color:#ececec; float:left"></div>
+            <div id="order_main"><img src="img/order.png"><span>抱歉，您还未有此类的订单信息</span></div>
+              </li>
+              <li>
+              <div style="width:100%; height:20px; background-color:#ececec; float:left"></div>
+            <div id="order_main"><img src="img/order.png"><span>您已交易完成902个订单</span></div>
+              </li>
+               <li>
+ <div style="width:100%; height:20px; background-color:#ececec; float:left"></div>
+            <div id="order_main"><img src="img/order.png"><span>您已取消110个订单</span></div>
+              </li>
+             
+           
+        </ul>
+    </div>
+</div>
+</body>
+</html>

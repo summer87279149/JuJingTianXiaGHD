@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="css/style.css"/>
+    
+<title>我的等级</title>
+
+<!--移动端版本兼容 -->
+<script type="text/javascript">
+         var phoneWidth =  parseInt(window.screen.width);
+         var phoneScale = phoneWidth/640;
+         var ua = navigator.userAgent;
+         if (/Android (\d+\.\d+)/.test(ua)){
+                   var version = parseFloat(RegExp.$1);
+                   if(version>2.3){
+                            document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+                   }else{
+                            document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+                   }
+         } else {
+                   document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+         }
+</script>
+<!--移动端版本兼容 end -->
+<script src="js/jquery.min.js"></script>
+</head>
+
+<body>
+<!--头部-->
+<div id="ghs_header">
+<div class="pro_return"><a href="setup.html"><img src="img/return.png" border="0"></a></div>
+<div class="gys_title">我的等级</div>
+<div class="in_xiaoxi"><div class="pro_sousuo"></div></div> 
+</div>
+<div style="margin-top:88px; float:left; width:100%;"></div>
+<div class="grade_main">
+<div class="grade_top">您当前的等级为：普通会员</div>
+<div class="grade_jdt">
+<div class="mature-progress">
+	<div class="mature-progress-bottom">
+		<!-- 等级样式  v0 v1 v2 v3 v4 v5 -->
+		<div class="mature-progress-box v0" id="mamture_progress">
+			<dl>
+				<dt>0</dt>
+				<dd><span class="member-ico v0"></span>普通会员</dd>
+			</dl>
+			<dl>
+				<dt>100</dt>
+				<dd><span class="member-ico v1"></span>水晶会员</dd>
+			</dl>
+			<dl>
+				<dt>300</dt>
+				<dd><span class="member-ico v2"></span>白银会员</dd>
+			</dl>
+			<dl>
+				<dt>1500</dt>
+				<dd><span class="member-ico v3"></span>黄金会员</dd>
+			</dl>
+			<dl>
+				<dt>2500</dt>
+				<dd><span class="member-ico v4"></span>铂金会员</dd>
+			</dl>
+            <dl>
+				<dt>3500</dt>
+				<dd><span class="member-ico v5"></span>钻石会员</dd>
+			</dl>
+   
+			<div class="progress-box" id="progress_content" data-progress="30">
+				<i class="progress-box-1"></i>
+				<!-- 100 -->
+				<i class="progress-box-2" ></i>
+				<!-- 300 -->
+				<i class="progress-box-3" ></i>
+				<!-- 1500 -->
+				<i class="progress-box-4"></i>
+				<!-- 2500 -->
+                <i class="progress-box-5"></i>
+                <!-- 3500+ -->
+                 <i class="progress-box-6"></i>
+                <!-- 10000+ -->
+			</div>
+		</div>
+		<div class="mature-progress-box bgtwos">
+			<dl> <dt></dt> </dl> <dl> <dt></dt> </dl> <dl> <dt></dt> </dl> <dl> <dt></dt> </dl> <dl> <dt></dt> </dl> <dl> <dt></dt> </dl>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+;(function(){
+	var mamture_progress = $('#mamture_progress');
+	var progress_content = $('#progress_content');
+	var l = 0;
+	var _number = progress_content.attr('data-progress');
+	var timer = null;
+	var pro = 0;
+
+	if ( _number < 100 ) {
+		lad(_number, 100, '.progress-box-1',function(){
+			$('.progress-box-1').append('<span>再有'+(100-_number)+'积分即可升级</span>');
+		});
+	};
+
+	if ( _number >= 100 && _number < 300  ) {
+		lad(100, 100, '.progress-box-1', function(){
+			mamture_progress.addClass('v1');
+			lad(_number-100, 300-100, '.progress-box-2',function(){
+				$('.progress-box-2').addClass('active');
+				$('.progress-box-2').append('<span>再有'+(300-_number)+'积分即可升级</span>');
+			});
+		});
+	};
+
+	if ( _number >=300 && _number < 1500  ) {
+		lad(100, 100, '.progress-box-1', function(){
+			mamture_progress.addClass('v1')
+			lad(300, 300, '.progress-box-2',function(){
+				mamture_progress.addClass('v2');
+				lad(_number-300, 1500-300, '.progress-box-3',function(){
+					$('.progress-box-3').addClass('active');
+					$('.progress-box-3').append('<span>再有'+(1500-_number)+'积分即可升级</span>');
+				})
+			});
+		});
+	};
+
+	if ( _number >= 1500 && _number < 2500  ) {
+		lad(100, 100, '.progress-box-1', function(){
+			mamture_progress.addClass('v1')
+			lad(300, 300, '.progress-box-2',function(){
+				mamture_progress.addClass('v2')
+				lad(1500, 1500, '.progress-box-3', function(){
+					mamture_progress.addClass('v3')
+					lad(_number-1500, 2500-1500, '.progress-box-4',function(){
+						$('.progress-box-4').addClass('active');
+						$('.progress-box-4').append('<span>再有'+(2500-_number)+'积分即可升级</span>');
+					})
+				})
+			});
+		});
+	};
+	
+	if ( _number >= 2500 && _number <= 3500  ) {
+		lad(100, 100, '.progress-box-1', function(){
+			mamture_progress.addClass('v1')
+			lad(300, 300, '.progress-box-2',function(){
+				mamture_progress.addClass('v2')
+				lad(1500, 1500, '.progress-box-3', function(){
+					mamture_progress.addClass('v3')
+					lad(1500, 1500, '.progress-box-4', function(){
+					mamture_progress.addClass('v4')
+					lad(_number-2500, 3500-2500, '.progress-box-5',function(){
+						$('.progress-box-5').addClass('active');
+						$('.progress-box-5').append('<span>再有'+(3500-_number)+'积分即可升级</span>');
+					})
+				})
+			});
+			});
+		});
+	};
+	if ( _number >= 3500) {
+		lad(100, 100, '.progress-box-1', function(){
+			mamture_progress.addClass('v1')
+			lad(300, 300, '.progress-box-2',function(){
+				mamture_progress.addClass('v2')
+				lad(1500, 1500, '.progress-box-3', function(){
+					mamture_progress.addClass('v3')
+					lad(2500, 2500, '.progress-box-4',function(){
+						mamture_progress.addClass('v4')
+						lad(3500, 3500, '.progress-box-5',function(){
+						mamture_progress.addClass('v5')
+						lad(_number-3500,100000,'.progress-box-6')
+						mamture_progress.addClass('v6')
+					})
+				})
+			});
+		});
+		});
+	};
+
+	/*
+	 @number : 成长值
+	 @max : 最大值
+	 @callback : 回调方法
+	 */
+	function lad(number, max, cls, callback){
+		l = 0;
+		timer = setInterval(function(){
+			if ( number <= 100 ) {
+				l++;
+			}else if( number > 100 && number <= 300 ){
+				l+=5;
+			}else if( number > 300 && number <= 1500 ){
+				l+=10;
+			}else if( number > 1500 && number <= 2500 ){
+				l+=20;
+			}else if( number > 2500 && number <= 3500 ){
+				l+=30;
+			}else{
+				l+=40;
+			};
+
+			pro = (l/max)*62;				//62为  div的长度
+			if ( l >= number ) {
+				clearInterval(timer);
+				if ( callback ) callback();   //回调
+			};
+			$(cls).css({
+				width : pro+'px'
+			})
+		},1)
+	}
+})();
+	
+
+</script>
+</div>
+<div class="grade_sm">聚镜会员级别分为：<br>
+  <br>
+普通会员、水晶会员、白银会员、黄金会员、铂金会员、钻石会员，不同的会员等级享受不同的购物优惠！</div>
+<div class="grade_sm">
+<table width="100%" border="0" style="text-align:center;" class="border-table">
+  <tr style="background-color:#000; color:#fff">
+    <td>会员等级</td>
+    <td>经验值</td>
+    <td>享受待遇</td>
+  </tr>
+  <tr>
+    <td>普通会员</td>
+    <td>100积分</td>
+    <td>聚镜价</td>
+  </tr>
+  <tr>
+    <td>水晶会员</td>
+    <td>101积分</td>
+    <td>聚镜价</td>
+  </tr>
+  <tr>
+    <td>白银会员</td>
+    <td>300积分</td>
+    <td>聚镜价<font color="#f00">98折</font></td>
+  </tr>
+  <tr>
+    <td>黄金会员</td>
+    <td>1500积分</td>
+    <td>聚镜价<font color="#f00">97折</font></td>
+  </tr>
+  <tr>
+    <td>铂金会员</td>
+    <td>2500积分</td>
+    <td>聚镜价<font color="#f00">96折</font></td>
+  </tr>
+  <tr>
+    <td>钻石会员</td>
+    <td>3500积分</td>
+    <td>聚镜价<font color="#f00">95折</font></td>
+  </tr>
+</table>
+
+</div>
+<div class="grade_sm"><font color="#f00">注：</font><br>
+  <br>
+  1.个别活动商品及团购商品不再享受以上折扣，不同会员等级优惠幅度及售价以产品页面及购物车显示价格为准。<br>
+  2.钻石VIP会员优惠不与其他形式的返利返现优惠同享<br>
+  <br>
+晋级说明<br>
+随着您购买商品金额的累加，您账号的等级积分将对应增加，一旦符合晋级条件，系统将自动升级您的会员等级。<br>
+<br>
+等级积分如何获得<br>
+<br>
+1.新注册会员即得100等级积分<br>
+2.成功购买商品，将获得与商品价格相应数量的等级积分。<br> 
+如购买产品价价格145，将获得145积分。
+</div>
+</div>
+</body>
+</html>

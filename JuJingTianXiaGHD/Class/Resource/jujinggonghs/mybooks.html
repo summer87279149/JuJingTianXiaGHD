@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="css/style.css"/>
+    
+<title>我的账本</title>
+
+<!--移动端版本兼容 -->
+<script type="text/javascript">
+         var phoneWidth =  parseInt(window.screen.width);
+         var phoneScale = phoneWidth/640;
+         var ua = navigator.userAgent;
+         if (/Android (\d+\.\d+)/.test(ua)){
+                   var version = parseFloat(RegExp.$1);
+                   if(version>2.3){
+                            document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+                   }else{
+                            document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+                   }
+         } else {
+                   document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+         }
+</script>
+<!--移动端版本兼容 end -->
+
+</head>
+
+<body bgcolor="#ececec">
+<!--头部-->
+<div id="ghs_header">
+<div class="pro_return"><a href="index.html"><img src="img/return.png" border="0"></a></div>
+<div class="gys_title">我的账本</div>
+<div class="in_xiaoxi"><div class="pro_sousuo"><a href="tixian.html"><font color="#FFFFFF">提现</font></a></div></div> 
+</div>
+<div style="margin-top:88px; float:left; width:100%;"></div>
+
+<div id="mybooke_main"><div class="mybooke_mlf"><div><div class="mybooke_mlfpinlf"><img src="img/ye1.png"></div><div class="mybooke_mlfpinrg">账户余额：</div></div>
+<div class="mybooke_mlfyg">0.00元</div></div><div class="mybooke_mrg">
+<div class="mybooke_mrglf"><img src="img/ye2.png"></div><div class="mybooke_mrgrg"><img src="img/right.png"></div></div></div>
+<div class="mybooke_name">实名认证状态：李**实名认证成功</div>
+<div class="mybooke_hdzd">
+<div class="mybooke_hdzdtil"><div class="mybooke_htlf"><div class="mybooke_htlf1"></div>
+<div class="mybooke_htlf2">本月财富</div></div><div class="mybooke_htrg"><div class="mybooke_htlf3"><a href="mybookslist.html"><img src="img/rg.png"></a></div>
+<div class="mybooke_htlf4"><a href="mybookslist.html">查看详情</a></div></div></div>
+<div class="mybooke_hmdw">
+
+<div class="mybooke_hmdwup">
+  <div class="mybooke_hmdwuplf"><p>订单货款（元）</p><p>1150937.00</p></div>
+  <div class="mybooke_hmdwuprg"><p>提现（元）</p><p>1150937.00</p></div></div>
+  <div class="mybooke_hmdwdw">
+  <div class="mybooke_hmdwuplf">
+    <p>活动奖励（元）</p>
+    <p>0.00</p></div>
+  <div class="mybooke_hmdwuprg">
+    <p>待收货款（元）</p>
+    <p>0.00</p></div></div>
+  </div>
+</div>
+<div style="width:100%; height:30px; float:left"></div>
+</body>
+</html>

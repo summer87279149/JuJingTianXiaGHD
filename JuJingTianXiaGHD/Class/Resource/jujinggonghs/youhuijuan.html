@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>我的优惠券</title>
+      <link rel="stylesheet" href="css/style.css"/>
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js" ></script>
+    <!--移动端版本兼容 -->
+<script type="text/javascript">
+         var phoneWidth =  parseInt(window.screen.width);
+         var phoneScale = phoneWidth/640;
+         var ua = navigator.userAgent;
+         if (/Android (\d+\.\d+)/.test(ua)){
+                   var version = parseFloat(RegExp.$1);
+                   if(version>2.3){
+                            document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+                   }else{
+                            document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+                   }
+         } else {
+                   document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+         }
+</script>
+<!--移动端版本兼容 end -->
+<!--Tab选项卡JS调用及样式-->
+  <script src="js/jquery.min.js"></script>
+    <script>
+        $(function() {
+            $(".tab a").click(function() {
+                $(this).addClass('curr').siblings().removeClass('curr');
+                var index = $(this).index();
+                number = index;
+                $('.nav .content li').hide();
+                $('.nav .content li:eq(' + index + ')').show();
+            });
+        })
+    </script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+			font-family:"微软雅黑";
+        }
+        div, input, textarea, button, a {
+            -webkit-tap-highlight-color: rgba(0,0,0,0);
+        }
+     ul, li, ol{
+            list-style: none;
+        }
+        a {
+            color: #323232;
+            outline-style: none;
+            text-decoration: none;
+        }
+        .border-b {
+            position: relative;
+			font-size:30px;
+        }
+        .border-b:after {
+            top: auto;
+            bottom: 0;
+        }
+        .border-t:before, .border-b:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            background: #ddd;
+            right: 0;
+            height: 1px;
+            -webkit-transform: scaleY(0.5);
+            transform: scaleY(0.5);
+            -webkit-transform-origin: 0 0;
+            transform-origin: 0 0;
+        }
+        .nav {
+            background-color: #fff;
+            text-align: center;
+        }
+        .nav .tab {
+            width: 100%;
+			height:70px;
+            position: relative;
+            overflow: hidden;
+        }
+        .tab a {
+            float: left;
+            width: 33%;
+			height:70px;
+            line-height:70px;
+            display: inline-block;
+            border-right: 1px solid #e1e1e1;
+        }
+        .tab a:last-child {
+            border-right: 0;
+        }
+        .tab .curr {
+			height:68px;
+            border-bottom: 2px solid #fc7831;
+            color: #fc7831;
+        }
+        .content ul li {
+            display: none;
+            width: 100%;
+        }
+		.demo{list-style:none;width:100%;height:170px;text-align:center; float:left; margin-top:30px;}
+    .demo bb{position:relative;width:90%;height:100%;margin-right:3%;background:#fff;display:inline-block;}
+    .demo bb:last-child{margin-right:0;}
+    .demo bb:before{content:"";position:absolute;left:0px;top:0;width:10px;height:100%;}
+    .demo bb:before,
+    .demo bb:after{content: "";position: absolute;top: -20px;display: block;width:10px;height: 100%;margin-top: 20px;background-size:20px 10px;}
+    .demo bb:before{left: -10px;background-color: #edeef0;background-position: 100% 35%;
+      background-image: linear-gradient(-45deg, #fff 25%, transparent 25%, transparent),
+      linear-gradient(-135deg, #fff 25%, transparent 25%, transparent),
+      linear-gradient(-45deg, transparent 75%, #fff 75%),
+      linear-gradient(-135deg, transparent 75%, #fff 75%);}
+    .demo bb:after{right:-9px;background-color: #fb4b4e;background-position: 100% 35%;
+      background-image: linear-gradient(-45deg, #ededed 25%, transparent 25%, transparent),
+      linear-gradient(-135deg, #ededed 25%, transparent 25%, transparent),
+      linear-gradient(-45deg, transparent 75%, #ededed 75%),
+      linear-gradient(-135deg, transparent 75%, #ededed 75%);}
+	  
+	  .demo cc{position:relative;width:90%;height:100%;margin-right:3%;background:#fff;display:inline-block;}
+    .demo cc:last-child{margin-right:0;}
+    .demo cc:before{content:"";position:absolute;left:0px;top:0;width:10px;height:100%;}
+    .demo cc:before,
+    .demo cc:after{content: "";position: absolute;top: -20px;display: block;width:10px;height: 100%;margin-top: 20px;background-size:20px 10px;}
+    .demo cc:before{left: -10px;background-color: #edeef0;background-position: 100% 35%;
+      background-image: linear-gradient(-45deg, #fff 25%, transparent 25%, transparent),
+      linear-gradient(-135deg, #fff 25%, transparent 25%, transparent),
+      linear-gradient(-45deg, transparent 75%, #fff 75%),
+      linear-gradient(-135deg, transparent 75%, #fff 75%);}
+    .demo cc:after{right:-9px;background-color: #bebebe;background-position: 100% 35%;
+      background-image: linear-gradient(-45deg, #ededed 25%, transparent 25%, transparent),
+      linear-gradient(-135deg, #ededed 25%, transparent 25%, transparent),
+      linear-gradient(-45deg, transparent 75%, #ededed 75%),
+      linear-gradient(-135deg, transparent 75%, #ededed 75%);}
+    </style></head>
+
+<body bgcolor="#ededed">
+<div id="ghs_header">
+<div class="pro_return"><a href="infor.html"><img src="img/return.png" border="0"></a></div>
+<div class="gys_title">我的优惠券</div>
+<div class="in_xiaoxi"><div class="pro_sousuo"></div></div>
+</div>
+<div style="margin-top:88px; float:left; width:100%;"></div>
+<div class="nav">
+    <div class="tab border-b">
+        <a href="javascript:;" class="curr">未使用</a>
+        <a href="javascript:;">已使用</a>
+         <a href="javascript:;">已过期</a>
+        
+    </div>
+    <div class="content">
+        <ul>
+            <li style="display: block">
+                  <div class="demo">
+               <bb>
+                 <div class="yhjlf">
+                   <div class="yhjlf_money" style="color:#fb4b4e;">
+                     <div class="yhjlf_moneyup">5</div>
+                     <div class="yhjlf_moneydw">优惠券</div>
+                   </div>
+                   <div class="yhjlf_man">
+                     <div class="yhjlf_manup"></div>
+                     <div class="yhjlf_mandw">
+                       <div class="yhjlf_mdwlf">·</div>
+                       <div class="yhjlf_mdwrg">满200元可用</div>
+                     </div>
+                     <div class="yhjlf_mandw" style="color:#fb4b4e;">
+                       <div class="yhjlf_mdwlf">·</div>
+                       <div class="yhjlf_mdwrg">2017.02.27-2017.03.31</div>
+                     </div>
+                   </div>
+                 </div>
+                 <div class="yhjrg"><a href="#"><font color="#FFFFFF">使用</font></a></div>
+               </bb>
+             </div>
+             
+           
+           
+             <div class="demo">
+               <bb>
+                 <div class="yhjlf">
+                   <div class="yhjlf_money" style="color:#fb4b4e;">
+                     <div class="yhjlf_moneyup">10</div>
+                     <div class="yhjlf_moneydw">优惠券</div>
+                   </div>
+                   <div class="yhjlf_man">
+                     <div class="yhjlf_manup"></div>
+                     <div class="yhjlf_mandw">
+                       <div class="yhjlf_mdwlf">·</div>
+                       <div class="yhjlf_mdwrg">满200元可用</div>
+                     </div>
+                     <div class="yhjlf_mandw" style="color:#fb4b4e;">
+                       <div class="yhjlf_mdwlf">·</div>
+                       <div class="yhjlf_mdwrg">2017.02.27-2017.03.31</div>
+                     </div>
+                   </div>
+                 </div>
+                 <div class="yhjrg"><a href="#"><font color="#FFFFFF">使用</font></a></div>
+               </bb>
+             </div>
+             
+             <div class="demo">
+               <bb>
+                 <div class="yhjlf">
+                   <div class="yhjlf_money" style="color:#fb4b4e;">
+                     <div class="yhjlf_moneyup">15</div>
+                     <div class="yhjlf_moneydw">优惠券</div>
+                   </div>
+                   <div class="yhjlf_man">
+                     <div class="yhjlf_manup"></div>
+                     <div class="yhjlf_mandw">
+                       <div class="yhjlf_mdwlf">·</div>
+                       <div class="yhjlf_mdwrg">满200元可用</div>
+                     </div>
+                     <div class="yhjlf_mandw" style="color:#fb4b4e;">
+                       <div class="yhjlf_mdwlf">·</div>
+                       <div class="yhjlf_mdwrg">2017.02.27-2017.03.31</div>
+                     </div>
+                   </div>
+                 </div>
+                 <div class="yhjrg"><a href="#"><font color="#FFFFFF">使用</font></a></div>
+               </bb>
+             </div>
+            </li>
+            <li>
+<div class="demo">
+               <cc>
+                 <div class="yhjlf">
+                   <div class="yhjlf_money"  style="color:#bebebe;">
+                     <div class="yhjlf_moneyup">8</div>
+                     <div class="yhjlf_moneydw">优惠券</div>
+                   </div>
+                   <div class="yhjlf_man">
+                     <div class="yhjlf_manup"></div>
+                     <div class="yhjlf_mandw" style="color:#bebebe;">
+                       <div class="yhjlf_mdwlf">·</div>
+                       <div class="yhjlf_mdwrg">满200元可用</div>
+                     </div>
+                     <div class="yhjlf_mandw" style="color:#bebebe;">
+                       <div class="yhjlf_mdwlf">·</div>
+                       <div class="yhjlf_mdwrg">2017.02.27-2017.03.31</div>
+                     </div>
+                   </div>
+                 </div>
+                 <div class="yhjrghs">已使用</div>
+               </cc>
+             </div>
+             
+             <div class="demo">
+               <cc>
+                 <div class="yhjlf">
+                   <div class="yhjlf_money" style="color:#bebebe;">
+                     <div class="yhjlf_moneyup">10</div>
+                     <div class="yhjlf_moneydw">优惠券</div>
+                   </div>
+                   <div class="yhjlf_man">
+                     <div class="yhjlf_manup"></div>
+                     <div class="yhjlf_mandw" style="color:#bebebe;">
+                       <div class="yhjlf_mdwlf">·</div>
+                       <div class="yhjlf_mdwrg">满200元可用</div>
+                     </div>
+                     <div class="yhjlf_mandw" style="color:#bebebe;">
+                       <div class="yhjlf_mdwlf">·</div>
+                       <div class="yhjlf_mdwrg">2017.02.27-2017.02.28</div>
+                     </div>
+                   </div>
+                 </div>
+                 <div class="yhjrghs">已使用</div>
+               </cc>
+             </div>
+              </li>
+              <li>
+              <div class="demo">
+               <cc>
+                 <div class="yhjlf">
+                   <div class="yhjlf_money" style="color:#bebebe;">
+                     <div class="yhjlf_moneyup">5</div>
+                     <div class="yhjlf_moneydw">优惠券</div>
+                   </div>
+                   <div class="yhjlf_man">
+                     <div class="yhjlf_manup"></div>
+                     <div class="yhjlf_mandw" style="color:#bebebe;">
+                       <div class="yhjlf_mdwlf">·</div>
+                       <div class="yhjlf_mdwrg">满200元可用</div>
+                     </div>
+                     <div class="yhjlf_mandw" style="color:#bebebe;">
+                       <div class="yhjlf_mdwlf">·</div>
+                       <div class="yhjlf_mdwrg">2017.01.27-2017.01.31</div>
+                     </div>
+                   </div>
+                 </div>
+                 <div class="yhjrghs">已过期</div>
+               </cc>
+             </div>
+              </li>
+        </ul>
+    </div>
+</div>
+
+  <div style="background-color:#ededed; height:20px;width:100%; float:left; "></div>
+ 
+</body>
+</html>

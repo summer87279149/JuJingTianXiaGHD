@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="css/style.css"/>
+     <link rel="stylesheet" href="css/demo1.css">   
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script src="js/jquery-2.1.1.min.js"></script>
+<link rel="stylesheet" href="css/index.css">
+    
+<title>聚镜供货商</title>
+
+<!--移动端版本兼容 -->
+<script type="text/javascript">
+         var phoneWidth =  parseInt(window.screen.width);
+         var phoneScale = phoneWidth/640;
+         var ua = navigator.userAgent;
+         if (/Android (\d+\.\d+)/.test(ua)){
+                   var version = parseFloat(RegExp.$1);
+                   if(version>2.3){
+                            document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+                   }else{
+                            document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+                   }
+         } else {
+                   document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+         }
+</script>
+<!--移动端版本兼容 end -->
+    
+</head>
+
+<body bgcolor="#ececec">
+<!--头部-->
+<div class="wrapper">
+<div class="container">
+<div id="ghs_header">
+<div class="pro_return"><a href="javascript:;" class="slide-menu"><img src="img/in_gr.png" alt="" ></a></div>
+<div class="gys_title">聚镜供货商</div>
+<div class="in_return"><a href="infor.html"> <img src="img/in_xx.png" border="0" style="float:right"><div class="in_tongzhi">9</div>
+</a> </div>
+</div>
+<div style="margin-top:88px; float:left; width:100%;"></div>
+
+<div id="in_main">
+  <div class="in_mborder">今日成交金额（元）：0.00</div>
+  <div class="in_mborder">账户金额（元）：0.00</div>
+  </div>
+  <div class="in_mionsbg">
+  <div class="in_mionsup">
+  <div class="in_mionsuplf"><a href="mybooks.html"><img src="img/in_11.jpg" border="0"><span>我的账本</span></a></div>
+  <div class="in_mionsuplf"><a href="shangjia.html"><img src="img/in_22.jpg"><span>商品管理</span></a></div>
+  <div class="in_mionsuprg"><a href="order.html"><img src="img/in_33.jpg"><span>订单管理</span></a></div></div>
+  <div class="in_mionsdw">
+    <div class="in_mionsuplf"><a href="bankcard.html"><img src="img/in_44.jpg"><span>我的银行卡</span></a></div>
+    <div class="in_mionsuplf"><a href="ewm.html"><img src="img/in_55.jpg"><span>我的二维码</span></a></div>
+    <div class="in_mionsuprg"><a href="distribution.html"><img src="img/in_66.jpg"><span>配送方式</span></a></div></div>
+  </div>
+  </div>
+  </div>
+  
+  <!-- 侧边导航 -->
+<div class="slide-mask"></div>
+<aside class="slide-wrapper">
+  <div>
+  <div id="lfnav_bg">
+  <div class="lfnav_pic"><img src="img/in8.jpg"><span>聚镜供货商</span></div>
+  </div>
+  <div id="lfnav_dw">
+  <a href="password.html"><div class="lfnav_dw1"><img src="img/i1.png"><span>密码安全</span></div></a>
+  <a href="bankcard.html"><div class="lfnav_dw1"><img src="img/i2.png"><span>我的银行卡</span></div></a>
+  <a href="distribution.html"><div class="lfnav_dw1"><img src="img/i3.png"><span>配送方式</span></div></a>
+  <a href="setup.html"><div class="lfnav_dw1"><img src="img/i4.png"><span>设置</span></div></a>
+  <div style="border-bottom:1px solid #ccc; float:left; width:100%; height:1px; margin-top:18x;"></div>
+ <a href="feedback.html"> <div class="lfnav_dw1"><img src="img/i5.png"><span>意见反馈</span></div></a>
+ <a href="about.html"><div class="lfnav_dw1"><img src="img/i6.png"><span>关于我们</span></div></a>
+ <a href="ghxz.html"> <div class="lfnav_dw1"><img src="img/i7.png"><span>供货须知</span></div></a>
+ <div style="border-bottom:1px solid #ccc; float:left; width:100%; height:1px; margin-top:18px;"></div>
+ <a href="login.html"><div class="lfnav_dw1"><img src="img/i8.png"><span>退出账号</span></div></a>
+</div>
+	
+  </div>
+</aside>
+
+<script type="text/javascript">
+$(function(){
+	$('aside.slide-wrapper').on('touchstart', 'li', function(e){
+		$(this).addClass('current').siblings('li').removeClass('current');
+	});
+	
+	$('a.slide-menu').on('click', function(e){
+		var wh = $('div.wrapper').height();
+		$('div.slide-mask').css('height', wh).show();
+		$('aside.slide-wrapper').css('height', wh).addClass('moved');
+	});
+	
+	$('div.slide-mask').on('click', function(){
+		$('div.slide-mask').hide();
+		$('aside.slide-wrapper').removeClass('moved');
+	});
+});
+</script>
+  
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>提现</title>
+    <link rel="stylesheet" href="css/style.css"/>
+    <!--移动端版本兼容 -->
+<script type="text/javascript">
+         var phoneWidth =  parseInt(window.screen.width);
+         var phoneScale = phoneWidth/640;
+         var ua = navigator.userAgent;
+         if (/Android (\d+\.\d+)/.test(ua)){
+                   var version = parseFloat(RegExp.$1);
+                   if(version>2.3){
+                            document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+                   }else{
+                            document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+                   }
+         } else {
+                   document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+         }
+</script>
+<!--移动端版本兼容 end -->
+</head>
+
+<body bgcolor="#ededed">
+<div id="ghs_header">
+<div class="pro_return"><a href="mybooks.html"><img src="img/return.png" border="0"></a></div>
+<div class="gys_title">提现</div>
+<div class="in_xiaoxi"><div class="pro_sousuo"></div></div> 
+</div>
+<div style="margin-top:118px; float:left; width:100%;"></div>
+<div class="tixian_up"><div class="tixian_mdpic"><img src="img/bank.png" style="border-radius:5px; border:1px solid #d84747;"></div><div class="tixian_mdfont">
+  <div class="tixian_mdfont1">中国银行</div> 
+  <div class="tixian_mdfont3">银行卡尾号：2757</div></div>
+  <div class="tixian_picrg"><a href="bankcard.html"><img src="img/rg.png"></a></div>
+  </div>
+  <div class="tixian_bz">备注：提现</div>
+  <div class="tixian_ye">
+    <div class="tixian_yelf"><p><font color="#FF0000">账户余额</font></p>
+      <p>0.00元</p></div>
+      <div class="tixian_yelf"><p><font color="#FF0000">最多可提现金额</font></p>
+      <p>0.00元</p></div>
+      <div class="tixian_yerg"><p><font color="#FF0000">本月累计提现</font></p>
+      <p>1150937.00元</p></div>
+    </div>
+    <div class="tixian_txje"><div class="tixian_txjelf">提现金额:</div><div class="tixian_txjerg"><input name="textarea" type="text" id="textarea" style=" width:98%; height:50px; font-size:25px; font-family:'微软雅黑';padding-left:2%; border:none; float:left;" placeholder="请输入提现金额"></div></div>
+    <div class="tixian_txjesm">*本日还可以提现1次</div>
+      <div class="tixian_but">申请提现</div>
+      <div style="width:100%; height:30px; float:left;"></div>
+</body>
+</html>

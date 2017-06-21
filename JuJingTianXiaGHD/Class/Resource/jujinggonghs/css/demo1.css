@@ -1,0 +1,165 @@
+     *{
+            margin: 0;
+            padding: 0;
+			font-family:"微软雅黑";
+
+        }
+        div, input, textarea, button, a {
+            -webkit-tap-highlight-color: rgba(0,0,0,0);
+			  text-decoration: none;
+        }
+     ul, li, ol{
+            list-style: none;
+			font-size:22px;
+        }
+       
+        .border-b {
+            position: relative;
+        }
+        .border-b:after {
+            top: auto;
+            bottom: 0;
+        }
+        .border-t:before, .border-b:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            background: #ddd;
+            right: 0;
+            height: 1px;
+            -webkit-transform: scaleY(0.5);
+            transform: scaleY(0.5);
+            -webkit-transform-origin: 0 0;
+            transform-origin: 0 0;
+        }
+        .nav {
+            background-color: #fff;
+            text-align: center;
+						
+        }
+		a:hover
+		{
+			color:#b20d11;
+			text-align:center;}
+			a.icon:hover
+		{
+			color:#b20d11;
+			text-align:center;}
+        .nav .tab {
+	width: 100%;
+	height:115px;
+	position: relative;	
+	overflow: hidden;
+        }
+        .tab a {
+            float: left;
+            width: 20%;
+			height:115px;
+			padding-top:40px;			
+            display: inline-block;
+        }
+        .tab a:last-child {
+            border-right: 0;
+			text-align:center;
+        }
+        .tab .curr {
+           color:#b20d11;
+        }
+        .content ul li {
+            display: none;
+            width: 100%;
+        }
+
+
+
+/** 清除内外边距 **/
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, /* structural elements 结构元素 */
+dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
+pre, /* text formatting elements 文本格式元素 */
+form, fieldset, legend, button, input, textarea, /* form elements 表单元素 */
+th, td /* table elements 表格元素 */ {
+  margin: 0;
+  padding: 0;
+}
+
+/** 设置默认字体 **/
+h1, h2, h3, h4, h5, h6 { font-size: 100%; }
+address, cite, dfn, em, var { font-style: normal; } /* 将斜体扶正 */
+code, kbd, pre, samp { font-family: courier new, courier, monospace; } /* 统一等宽字体 */
+
+/** 重置列表元素 **/
+ul, ol { list-style: none; }
+
+/** 重置文本格式元素 **/
+a { text-decoration: none; color:#000;}
+a:hover {  text-decoration: none;}
+
+
+/** 重置表单元素 **/
+legend { color: #000; } /* for ie6 */
+fieldset, img { border: 0; } /* img 搭车：让链接里的 img 无边框 */*/
+/* 注：optgroup 无法扶正 */
+
+/** 重置表格元素 **/
+table { border-collapse: collapse; border-spacing: 0; }
+
+/* 清除浮动 */
+.ks-clear:after, .clear:after {
+  content: '\20';
+  display: block;
+  height: 0;
+  clear: both;
+}
+.ks-clear, .clear {
+  *zoom: 1;
+}
+
+.helps{margin-top:40px;}
+.helps pre{
+  padding:20px;
+  margin:10px 0;
+  border:solid 1px #e7e1cd;
+  background-color: #fffdef;
+  overflow: auto;
+}
+
+.icon_lists{
+  width: 100% !important;
+  font-size:14px;
+}
+
+.icon_lists li{
+	float:left;
+	width: 100%;
+	height:50px;
+	text-align: center;
+	list-style: none !important;
+}
+
+
+.icon_lists li:hover,  .icon:hover{
+  color:#b20d11;
+}
+.img {
+	width:100%;
+	text-align:center;}
+
+#order_main
+{
+	width:100%;
+	height:100%;
+	float:left;
+	padding-top:100px;
+	background-color:#fff;
+	padding-bottom: 100px;
+}
+#order_main img
+{
+	width:10%;
+	text-align:center;}
+#order_main span
+{
+	width:100%;
+	font-size:26px;
+	color:#b4b4b4;
+	float:left;}

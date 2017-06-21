@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="css/style.css"/>
+    
+<title>设置</title>
+
+<!--移动端版本兼容 -->
+<script type="text/javascript">
+         var phoneWidth =  parseInt(window.screen.width);
+         var phoneScale = phoneWidth/640;
+         var ua = navigator.userAgent;
+         if (/Android (\d+\.\d+)/.test(ua)){
+                   var version = parseFloat(RegExp.$1);
+                   if(version>2.3){
+                            document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+                   }else{
+                            document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+                   }
+         } else {
+                   document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+         }
+</script>
+<!--移动端版本兼容 end -->
+<script src="js/jquery.min1.js"></script>
+<script type="text/javascript" src="js/jquery.reveal.js"></script>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+
+	$("#dropdown p").click(function(){
+		var ul = $("#dropdown ul");
+		if(ul.css("display")=="none"){
+			ul.slideDown("fast");
+		}else{
+			ul.slideUp("fast");
+		}
+	});
+	
+	$("#dropdown ul li a").click(function(){
+		var txt = $(this).text();
+		$("#dropdown p").html(txt);
+		var value = $(this).attr("rel");
+		$("#dropdown ul").hide();
+	});
+
+});
+</script>
+<link rel="stylesheet" type="text/css" href="css/payment.css"/><!--弹出层样式-->
+</head>
+
+<body>
+<!--头部-->
+<div id="ghs_header">
+<div class="pro_return"><a href="index.html"><img src="img/return.png" border="0"></a></div>
+<div class="gys_title">设置</div>
+<div class="in_xiaoxi"><div class="pro_sousuo"></div></div>
+</div>
+<div style="margin-top:88px; float:left; width:100%;"></div>
+<div id="zhxx_bank">
+  <div class="zhxx_banklf">头像</div>
+  <div class="zhxx_bankrg">
+  <div class="con4">
+		<div id="cvsrg"><span class="btn upload"><img src="img/rg.png" ><input type="file" class="upload_pic" id="upload" /></span></div><canvas id="cvs" width="200" height="200"></canvas>
+		
+	</div>
+
+<script>
+//获取上传按钮
+var input1 = document.getElementById("upload"); 
+ 
+if(typeof FileReader==='undefined'){ 
+     //result.innerHTML = "抱歉，你的浏览器不支持 FileReader"; 
+     input1.setAttribute('disabled','disabled'); 
+}else{ 
+     input1.addEventListener('change',readFile,false); 
+     /*input1.addEventListener('change',function (e){
+     	console.log(this.files);//上传的文件列表
+     },false); */
+}
+function readFile(){ 
+	var file = this.files[0];//获取上传文件列表中第一个文件
+	if(!/image\/\w+/.test(file.type)){
+	//图片文件的type值为image/png或image/jpg
+		alert("文件必须为图片！");
+		return false; 
+	} 
+	// console.log(file);
+	var reader = new FileReader();//实例一个文件对象
+	reader.readAsDataURL(file);//把上传的文件转换成url
+	//当文件读取成功便可以调取上传的接口
+	reader.onload = function(e){ 
+		// console.log(this.result);//文件路径
+		// console.log(e.target.result);//文件路径
+		/*var data = e.target.result.split(',');
+		var tp = (file.type == 'image/png')? 'png': 'jpg';
+		var imgUrl = data[1];//图片的url，去掉(data:image/png;base64,)
+		//需要上传到服务器的在这里可以进行ajax请求
+		// console.log(imgUrl);
+		// 创建一个 Image 对象 
+		var image = new Image();
+		// 创建一个 Image 对象 
+		// image.src = imgUrl;
+		image.src = e.target.result;
+		image.onload = function(){
+			document.body.appendChild(image);
+		}*/
+
+		var image = new Image();
+		// 设置src属性 
+		image.src = e.target.result;
+		var max=200;
+		// 绑定load事件处理器，加载完成后执行，避免同步问题
+		image.onload = function(){ 
+			// 获取 canvas DOM 对象 
+			var canvas = document.getElementById("cvs"); 
+			// 如果高度超标 宽度等比例缩放 *= 
+			/*if(image.height > max) {
+				image.width *= max / image.height; 
+				image.height = max;
+			} */
+			// 获取 canvas的 2d 环境对象, 
+			var ctx = canvas.getContext("2d"); 
+			// canvas清屏 
+			ctx.clearRect(0, 0, canvas.width, canvas.height); 
+			// 重置canvas宽高
+			/*canvas.width = image.width;
+			canvas.height = image.height;
+			if (canvas.width>max) {canvas.width = max;}*/
+			// 将图像绘制到canvas上
+			// ctx.drawImage(image, 0, 0, image.width, image.height);
+			ctx.drawImage(image, 0, 0, 200, 200);
+			// 注意，此时image没有加入到dom之中
+		};  
+	}
+};
+</script>
+  
+  
+  </div></div>
+
+<div id="sz_bank">
+  <div class="sz_banklf">用户名</div>
+  <div class="sz_bankrg"><a href="username.html"><span><font color="#8f8f8f">聚镜供货商</font></font></span><img src="img/rg.png" ></a></div></div>
+  <div id="sz_bank">
+  <div class="sz_banklf">昵称</div>
+  <div class="sz_bankrg"><a href="name.html"><span><font color="#8f8f8f">聚镜供货商</font></span><img src="img/rg.png" ></a></div></div>
+  <div id="sz_bank">
+  <div class="sz_banklf">我的等级</div>
+  <div class="sz_bankrg"><a href="grade.html"><span><font color="#8f8f8f">普通会员</font></span><img src="img/rg.png" ></a></div></div>
+  <div id="sz_bank">
+  <div class="sz_banklf">性别</div>
+  <div class="sz_bankrg">
+<!--    <div id="dropdown"><img src="img/rg.png" style="float:right;">
+    <p>请选择</p>
+      <ul>
+         <li><a href="#" rel="1">男</a></li>
+         <li><a href="#" rel="2">女</a></li>
+      </ul>  </div>-->
+      <div class="payment_time">
+			<div class="payment_time_title bg-3"><img src="img/rg.png" style="float:right;margin-top: -13px; "><span><em style="font-size:24px; line-height:32px; float:right">请选择</em><span style="font-size:24px; padding-top:3px; color:#fff;"></span></span>
+	  </div>
+			<div id="bg">
+				
+			</div>
+			<div class="payment_time_mask">
+				<ul>
+					<li>男</li>
+					<li>女</li>
+				</ul>
+			</div>			
+		</div>
+  <script src="js/jquery-1.10.2.js" type="text/javascript"></script>
+<script src="js/payment.js" type="text/javascript"></script>
+  </div></div>
+   <div id="sz_bank">
+  <div class="sz_banklf">收货地址</div>
+  <div class="sz_bankrg"><a href="address.html"><span><font color="#8f8f8f">请填写</font></span><img src="img/rg.png" ></a></div></div>
+    <div id="sz_bank">
+  <div class="sz_banklf">清除缓存</div>
+  <div class="sz_bankrg"><a href="#"  class="big-link" data-reveal-id="myModal" data-animation="fade" style="color:#fff;"><span>0.00MB</span><img src="img/rg.png" ></a></div></div>
+  
+  <div id="myModal" class="reveal-modal">
+<div class="xbzg_bg">
+<div style=" width:100%; height:60px; float:left"></div>
+<div class="xbzg_top" style="color:#000">提示</div>
+
+<div class="xbzg_wz">确定要清除缓存吗？</div>
+<div class="xbzg_button"><div class="xbzg_buttonlf"><a class="close-reveal-modal"  style="color:#fff">确定</a></div><div class="xbzg_buttonrg"><a class="close-reveal-modal"  style="color:#e24242">取消</a></div></div>
+</div>
+</div>
+
+    
+  </div>
+  <a href="#" style="color:#fff">
+  <div class="setting_button">退出登录</div></a>
+<div style="width:100%; height:50px; float:left"></div>
+</body>
+</html>
