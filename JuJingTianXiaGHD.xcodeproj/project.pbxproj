@@ -383,6 +383,8 @@
 		844C648B1EFA40B4008377D9 /* youhuijuan.html in Resources */ = {isa = PBXBuildFile; fileRef = 844C641B1EFA40B4008377D9 /* youhuijuan.html */; };
 		844C648F1EFA40FC008377D9 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844C648D1EFA40FC008377D9 /* HomeViewController.m */; };
 		844C64901EFA40FC008377D9 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 844C648E1EFA40FC008377D9 /* HomeViewController.xib */; };
+		844C64921EFA4845008377D9 /* Reveal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 844C64911EFA4845008377D9 /* Reveal.framework */; };
+		844C64941EFA4865008377D9 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 844C64931EFA4865008377D9 /* libz.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -1025,6 +1027,8 @@
 		844C648C1EFA40FC008377D9 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		844C648D1EFA40FC008377D9 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		844C648E1EFA40FC008377D9 /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		844C64911EFA4845008377D9 /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
+		844C64931EFA4865008377D9 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		8A15921AFF95A4C8C1C808B6 /* Pods-JuJingTianXiaGHD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JuJingTianXiaGHD.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JuJingTianXiaGHD/Pods-JuJingTianXiaGHD.debug.xcconfig"; sourceTree = "<group>"; };
 		E9DF178B7640FC5088FB8188 /* Pods-JuJingTianXiaGHD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JuJingTianXiaGHD.release.xcconfig"; path = "Pods/Target Support Files/Pods-JuJingTianXiaGHD/Pods-JuJingTianXiaGHD.release.xcconfig"; sourceTree = "<group>"; };
 		F986FF43007D77DD04EEC336 /* libPods-JuJingTianXiaGHD.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JuJingTianXiaGHD.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1035,7 +1039,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				844C64941EFA4865008377D9 /* libz.tbd in Frameworks */,
 				6841FC245FEF8467D51FFC7A /* libPods-JuJingTianXiaGHD.a in Frameworks */,
+				844C64921EFA4845008377D9 /* Reveal.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1054,6 +1060,7 @@
 		844C60031EFA0CFC008377D9 = {
 			isa = PBXGroup;
 			children = (
+				844C64911EFA4845008377D9 /* Reveal.framework */,
 				844C600E1EFA0CFC008377D9 /* JuJingTianXiaGHD */,
 				844C600D1EFA0CFC008377D9 /* Products */,
 				6F16F00B861EFD7AA4E508B0 /* Pods */,
@@ -2453,6 +2460,7 @@
 		E59E5E34B671ED283E905BD6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				844C64931EFA4865008377D9 /* libz.tbd */,
 				F986FF43007D77DD04EEC336 /* libPods-JuJingTianXiaGHD.a */,
 			);
 			name = Frameworks;
@@ -3075,6 +3083,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = VK6VB86T3H;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/JuJingTianXiaGHD/Class/Others/PrefixHeader.pch";
 				INFOPLIST_FILE = JuJingTianXiaGHD/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -3091,6 +3103,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = VK6VB86T3H;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/JuJingTianXiaGHD/Class/Others/PrefixHeader.pch";
 				INFOPLIST_FILE = JuJingTianXiaGHD/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

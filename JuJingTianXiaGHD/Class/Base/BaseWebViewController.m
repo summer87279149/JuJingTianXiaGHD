@@ -5,7 +5,6 @@
 //  Created by Admin on 2017/6/21.
 //  Copyright © 2017年 Summer. All rights reserved.
 //
-#define WEBURL  @"http://cpsj.yzszsf.com/"
 #import "BaseWebViewController.h"
 
 @interface BaseWebViewController ()<WKUIDelegate,WKScriptMessageHandler,WKNavigationDelegate,UIScrollViewDelegate>
@@ -38,9 +37,8 @@
     
     WKPreferences *preferences = [WKPreferences new];
     configuration.preferences = preferences;
-    CGRect frame = WebViewFrame;
-    self.webView = [[WKWebView alloc] initWithFrame:frame configuration:configuration];
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:WEBURL]];
+    self.webView = [[WKWebView alloc] initWithFrame:WebViewFrame configuration:configuration];
+    NSURLRequest *request = [NSURLRequest requestWithURL:localURL];
     [self.webView loadRequest:request];
     self.webView.scrollView.bounces = NO;
     self.webView.scrollView.delegate = self;
@@ -50,12 +48,7 @@
     [self.view addSubview:self.webView];
 }
 
-- (void)dealloc
-{
-    NSLog(@"dealloc %s",__FUNCTION__);
-    //移除监听进度
-    [self.webView removeObserver:self forKeyPath:@"estimatedProgress"];
-}
+
 #pragma mark - WKScriptMessageHandler
 - (void)webView:(WKWebView *)webView runJavaScriptAlertPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(void))completionHandler
 {
@@ -78,6 +71,7 @@
 
 //这个是网页加载完成，导航的变化
 -(void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation{
+//    [JHUD hideForView:self.view];
 NSLog(@"完成加载");
 }
 
@@ -85,6 +79,8 @@ NSLog(@"完成加载");
 -(void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation{
     //开始加载的时候，让加载进度条显示
     NSLog(@"开始加载");
+    
+//    [JHUD showAtView:self.view message:@"loading..." hudType:JHUDLoadingTypeGifImage];
 }
 
 //内容返回时调用
@@ -100,6 +96,8 @@ NSLog(@"完成加载");
 // 内容加载失败时候调用
 -(void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation withError:(NSError *)error{
     NSLog(@"页面加载超时");
+    [JHUD hideForView:self.view];
+    [JHUD showAtView:self.view message:@"loading..." hudType:JHUDLoadingTypeFailure];
 }
 
 //跳转失败的时候调用
