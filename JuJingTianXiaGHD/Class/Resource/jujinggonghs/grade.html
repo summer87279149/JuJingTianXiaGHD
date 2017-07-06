@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="style.css"/><script src="vue.js"></script>
     
 <title>我的等级</title>
 
@@ -25,13 +25,13 @@
          }
 </script>
 <!--移动端版本兼容 end -->
-<script src="js/jquery.min.js"></script>
+<script src="jquery.min.js"></script>
 </head>
 
 <body>
 <!--头部-->
 <div id="ghs_header">
-<div class="pro_return"><a href="setup.html"><img src="img/return.png" border="0"></a></div>
+<div class="pro_return" @click="backroot"><a href="setup.html"><img src="return.png" border="0"></a></div>
 <div class="gys_title">我的等级</div>
 <div class="in_xiaoxi"><div class="pro_sousuo"></div></div> 
 </div>
@@ -275,5 +275,5 @@
 如购买产品价价格145，将获得145积分。
 </div>
 </div>
-</body>
+<script>new Vue({el: '#ghs_header',data: {message: 'Hello Vue!'},methods:{backroot(){            window.webkit.messageHandlers.popvc.postMessage('qqq');        }}})</script></body>
 </html>

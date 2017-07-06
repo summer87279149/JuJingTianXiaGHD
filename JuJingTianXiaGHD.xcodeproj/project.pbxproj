@@ -385,6 +385,9 @@
 		844C64901EFA40FC008377D9 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 844C648E1EFA40FC008377D9 /* HomeViewController.xib */; };
 		844C64921EFA4845008377D9 /* Reveal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 844C64911EFA4845008377D9 /* Reveal.framework */; };
 		844C64941EFA4865008377D9 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 844C64931EFA4865008377D9 /* libz.tbd */; };
+		844C64981EFA5C43008377D9 /* WRNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 844C64971EFA5C43008377D9 /* WRNavigationBar.m */; };
+		844C649A1EFA65D3008377D9 /* vue.js in Resources */ = {isa = PBXBuildFile; fileRef = 844C64991EFA65D3008377D9 /* vue.js */; };
+		849E64E31EFB75E5007E22E5 /* MyAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 849E64E21EFB75E5007E22E5 /* MyAccountViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -1029,6 +1032,11 @@
 		844C648E1EFA40FC008377D9 /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		844C64911EFA4845008377D9 /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
 		844C64931EFA4865008377D9 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		844C64961EFA5C43008377D9 /* WRNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRNavigationBar.h; sourceTree = "<group>"; };
+		844C64971EFA5C43008377D9 /* WRNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRNavigationBar.m; sourceTree = "<group>"; };
+		844C64991EFA65D3008377D9 /* vue.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = vue.js; sourceTree = "<group>"; };
+		849E64E11EFB75E5007E22E5 /* MyAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAccountViewController.h; sourceTree = "<group>"; };
+		849E64E21EFB75E5007E22E5 /* MyAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAccountViewController.m; sourceTree = "<group>"; };
 		8A15921AFF95A4C8C1C808B6 /* Pods-JuJingTianXiaGHD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JuJingTianXiaGHD.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JuJingTianXiaGHD/Pods-JuJingTianXiaGHD.debug.xcconfig"; sourceTree = "<group>"; };
 		E9DF178B7640FC5088FB8188 /* Pods-JuJingTianXiaGHD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JuJingTianXiaGHD.release.xcconfig"; path = "Pods/Target Support Files/Pods-JuJingTianXiaGHD/Pods-JuJingTianXiaGHD.release.xcconfig"; sourceTree = "<group>"; };
 		F986FF43007D77DD04EEC336 /* libPods-JuJingTianXiaGHD.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JuJingTianXiaGHD.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -2157,6 +2165,7 @@
 		844C62371EFA0E3F008377D9 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				844C649B1EFA6D24008377D9 /* New Group */,
 				844C639F1EFA219C008377D9 /* 首页 */,
 			);
 			path = Classes;
@@ -2219,6 +2228,7 @@
 		844C625B1EFA0E3F008377D9 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				844C64951EFA5C43008377D9 /* WRNavigationBar */,
 				844C625C1EFA0E3F008377D9 /* MBProgressHUD */,
 				844C62601EFA0E3F008377D9 /* MJRefresh */,
 				844C62711EFA0E3F008377D9 /* SKFCamera */,
@@ -2434,6 +2444,7 @@
 		844C63F41EFA40B4008377D9 /* js */ = {
 			isa = PBXGroup;
 			children = (
+				844C64991EFA65D3008377D9 /* vue.js */,
 				844C63F51EFA40B4008377D9 /* 5icool.org.js */,
 				844C63F61EFA40B4008377D9 /* addclear.js */,
 				844C63F71EFA40B4008377D9 /* alertPopShow.js */,
@@ -2455,6 +2466,24 @@
 				844C64071EFA40B4008377D9 /* ui-choose.js */,
 			);
 			path = js;
+			sourceTree = "<group>";
+		};
+		844C64951EFA5C43008377D9 /* WRNavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				844C64961EFA5C43008377D9 /* WRNavigationBar.h */,
+				844C64971EFA5C43008377D9 /* WRNavigationBar.m */,
+			);
+			path = WRNavigationBar;
+			sourceTree = "<group>";
+		};
+		844C649B1EFA6D24008377D9 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				849E64E11EFB75E5007E22E5 /* MyAccountViewController.h */,
+				849E64E21EFB75E5007E22E5 /* MyAccountViewController.m */,
+			);
+			name = "New Group";
 			sourceTree = "<group>";
 		};
 		E59E5E34B671ED283E905BD6 /* Frameworks */ = {
@@ -2593,6 +2622,7 @@
 				844C64391EFA40B4008377D9 /* down (1).png in Resources */,
 				844C648A1EFA40B4008377D9 /* ymm.html in Resources */,
 				844C647A1EFA40B4008377D9 /* message.html in Resources */,
+				844C649A1EFA65D3008377D9 /* vue.js in Resources */,
 				844C641F1EFA40B4008377D9 /* bankcard.html in Resources */,
 				844C64371EFA40B4008377D9 /* bank_z.png in Resources */,
 				844C644C1EFA40B4008377D9 /* in_44.jpg in Resources */,
@@ -2713,6 +2743,7 @@
 				844C62A11EFA0E3F008377D9 /* NSData+JKBase64.m in Sources */,
 				844C632B1EFA0E40008377D9 /* UILabel+JKAutomaticWriting.m in Sources */,
 				844C632F1EFA0E40008377D9 /* UINavigationController+JKKeyboardFix.m in Sources */,
+				849E64E31EFB75E5007E22E5 /* MyAccountViewController.m in Sources */,
 				844C63411EFA0E40008377D9 /* UITableViewCell+JKNIB.m in Sources */,
 				844C62F81EFA0E3F008377D9 /* UIApplication+JKNetworkActivityIndicator.m in Sources */,
 				844C62A51EFA0E3F008377D9 /* NSData+JKHash.m in Sources */,
@@ -2763,6 +2794,7 @@
 				844C638A1EFA0E40008377D9 /* UIScrollView+MJRefresh.m in Sources */,
 				844C63611EFA0E40008377D9 /* UIWebView+JKLoad.m in Sources */,
 				844C62CF1EFA0E3F008377D9 /* NSSet+JKBlock.m in Sources */,
+				844C64981EFA5C43008377D9 /* WRNavigationBar.m in Sources */,
 				844C62991EFA0E3F008377D9 /* NSManagedObjectContext+JKFetching.m in Sources */,
 				844C63191EFA0E40008377D9 /* UIImage+JKCapture.m in Sources */,
 				844C63281EFA0E40008377D9 /* UIImageView+JKGeometryConversion.m in Sources */,

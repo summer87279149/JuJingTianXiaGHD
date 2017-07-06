@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="css/style.css"/>
-    
+    <link rel="stylesheet" href="style.css"/><script src="vue.js"></script>
+    <script src="vue.js"></script>
 <title>我的账本</title>
 
 <!--移动端版本兼容 -->
@@ -28,22 +28,22 @@
 
 </head>
 
-<body bgcolor="#ececec">
+<body bgcolor="#ececec" id="view">
 <!--头部-->
 <div id="ghs_header">
-<div class="pro_return"><a href="index.html"><img src="img/return.png" border="0"></a></div>
+<div class="pro_return" @click="back"><a href=""><img src="return.png" border="0"></a></div>
 <div class="gys_title">我的账本</div>
 <div class="in_xiaoxi"><div class="pro_sousuo"><a href="tixian.html"><font color="#FFFFFF">提现</font></a></div></div> 
 </div>
 <div style="margin-top:88px; float:left; width:100%;"></div>
 
-<div id="mybooke_main"><div class="mybooke_mlf"><div><div class="mybooke_mlfpinlf"><img src="img/ye1.png"></div><div class="mybooke_mlfpinrg">账户余额：</div></div>
+<div id="mybooke_main"><div class="mybooke_mlf"><div><div class="mybooke_mlfpinlf"><img src="ye1.png"></div><div class="mybooke_mlfpinrg">账户余额：</div></div>
 <div class="mybooke_mlfyg">0.00元</div></div><div class="mybooke_mrg">
-<div class="mybooke_mrglf"><img src="img/ye2.png"></div><div class="mybooke_mrgrg"><img src="img/right.png"></div></div></div>
+<div class="mybooke_mrglf"><img src="ye2.png"></div><div class="mybooke_mrgrg"></div></div></div>
 <div class="mybooke_name">实名认证状态：李**实名认证成功</div>
 <div class="mybooke_hdzd">
 <div class="mybooke_hdzdtil"><div class="mybooke_htlf"><div class="mybooke_htlf1"></div>
-<div class="mybooke_htlf2">本月财富</div></div><div class="mybooke_htrg"><div class="mybooke_htlf3"><a href="mybookslist.html"><img src="img/rg.png"></a></div>
+<div class="mybooke_htlf2">本月财富</div></div><div class="mybooke_htrg"><div class="mybooke_htlf3"><a href="mybookslist.html"><img src="rg.png"></a></div>
 <div class="mybooke_htlf4"><a href="mybookslist.html">查看详情</a></div></div></div>
 <div class="mybooke_hmdw">
 
@@ -60,5 +60,18 @@
   </div>
 </div>
 <div style="width:100%; height:30px; float:left"></div>
+<script>
+    new Vue({
+        el:"#ghs_header",
+        data:{
+            a:'11'
+        },
+        methods:{
+            back(){
+                window.webkit.messageHandlers.popvc.postMessage('qqq');
+            }
+        }
+    })
+</script>
 </body>
 </html>

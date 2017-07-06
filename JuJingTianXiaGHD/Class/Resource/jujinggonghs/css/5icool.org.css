@@ -16,7 +16,7 @@ a, img {
 }
 /*history*/
 .history {
-	background:url(../img/line04.gif) repeat-y 155px 0;
+	background:url(line04.gif) repeat-y 155px 0;
 	overflow:hidden;
 	position:relative;
 }
@@ -25,7 +25,7 @@ a, img {
 	position:relative;
 }
 .history-date h2 {
-	background:#fff url(../img/icon06.gif) no-repeat 125px 0;
+	background:#fff url(icon06.gif) no-repeat 125px 0;
 	height:59px;
 	font-size:25px;
 	font-family:微软雅黑;
@@ -44,7 +44,7 @@ a, img {
 	display:inline-block;
 *display:inline;
 	zoom:1;
-	background:url(../img/icon08.gif) no-repeat right 50%;
+	background:url(icon08.gif) no-repeat right 50%;
 	padding-right:17px;
 	margin:21px 97px 0 0;
 }
@@ -58,7 +58,7 @@ a, img {
 	background:none;
 }
 .history-date ul li {
-	background:url(../img/icon07.gif) no-repeat 148px 0;
+	background:url(icon07.gif) no-repeat 148px 0;
 	padding-bottom:50px;
 	zoom:1;
 }

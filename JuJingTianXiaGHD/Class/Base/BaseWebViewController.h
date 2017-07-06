@@ -16,5 +16,9 @@
 }
 @property (strong, nonatomic) WKWebView *webView;
 @property (strong, nonatomic)   UIProgressView  *progressView;
++(instancetype)sharedWithWebName:(NSString *)name;
+- (instancetype)initWithWebName:(NSString *)name;
 - (instancetype)initWithWebViewFrame:(CGRect)frame localURL:(NSURL *)url;
+-(void)unifiedPopVCWith:(NSString*)ScriptMessage;
+- (NSString*)getJsonWith:(NSDictionary*)dic;
 @end

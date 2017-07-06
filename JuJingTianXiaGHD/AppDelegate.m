@@ -20,8 +20,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     NSURL *url = [[NSBundle mainBundle]URLForResource:@"index.html" withExtension:nil];
-    NSLog(@"11%@",url);
-    HomeViewController *vc = [[HomeViewController alloc]initWithWebViewFrame:CGRectMake(0, 20, kScreenWidth, kScreenHeight) localURL:url];
+    HomeViewController *vc = [[HomeViewController alloc]initWithWebViewFrame:CGRectMake(0, 20, kScreenWidth, kScreenHeight-20) localURL:url];
     vc.title = @"主页2";
     BaseNavViewController *nav = [[BaseNavViewController alloc]initWithRootViewController:vc];
     self.window.rootViewController = nav;

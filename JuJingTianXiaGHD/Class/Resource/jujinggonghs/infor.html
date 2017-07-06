@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title>消息中心</title>
-    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="style.css"/><script src="vue.js"></script>
     <!--移动端版本兼容 -->
 <script type="text/javascript">
          var phoneWidth =  parseInt(window.screen.width);
@@ -27,32 +27,32 @@
 
 <body bgcolor="#ededed">
 <div id="ghs_header">
-<div class="pro_return"><a href="index.html"><img src="img/return.png" border="0"></a></div>
+<div class="pro_return" @click="backroot"><a href="" ><img src="return.png" border="0"></a></div>
 <div class="gys_title">消息中心</div>
 <div class="in_xiaoxi"><div class="pro_sousuo"></div></div> 
 </div>
 <div style="margin-top:88px; float:left; width:100%;"></div>
 
 <div style="width:100%; background-color:#fff; float:left;"><div id="infor">
- <a href="news.html"><div class="inforbg"><div class="inforbglf"><img src="img/inf1.jpg"></div>
+ <a href="news.html"><div class="inforbg"><div class="inforbglf"><img src="inf1.jpg"></div>
 <div class="inforbgrg"><div class="inforbgrg_up">
  <div class="inforbgrg_uplf">聚镜公告</div>
   <div class="inforbgrg_uprg">昨天</div></div>
 <div class="inforbgrg_dw">1月12日实名认证上线，上线后，手机……</div></div></div></a>
 
-<a href="order.html"><div class="inforbg"><div class="inforbglf"><img src="img/inf2.jpg"></div>
+<a href="order.html"><div class="inforbg"><div class="inforbglf"><img src="inf2.jpg"></div>
 <div class="inforbgrg"><div class="inforbgrg_up">
   <div class="inforbgrg_uplf">订单通知</div><div class="inforbgrg_order">9</div>
   <div class="inforbgrg_uprg">01-11</div>
 </div>
 <div class="inforbgrg_dw">您收到一笔来自“惠明超市”的新订单，...</div></div></div></a>
 
- <a href="youhuijuan.html"><div class="inforbg"><div class="inforbglf"><img src="img/inf3.jpg"></div>
+ <a href="youhuijuan.html"><div class="inforbg"><div class="inforbglf"><img src="inf3.jpg"></div>
 <div class="inforbgrg"><div class="inforbgrg_up">
  <div class="inforbgrg_uplf">我的优惠券</div></div>
 <div class="inforbgrg_dw">暂无优惠券信息</div></div></div></a>
 
-  <a href="message.html"><div class="inforbg"><div class="inforbglf"><img src="img/inf4.jpg"></div>
+  <a href="message.html"><div class="inforbg"><div class="inforbglf"><img src="inf4.jpg"></div>
 <div class="inforbgrg"><div class="inforbgrg_up">
 <div class="inforbgrg_uplf">账户消息</div></div>
 <div class="inforbgrg_dw">暂无账户信息</div></div></div></a>
@@ -62,5 +62,5 @@
 </div>
 </div>
 <div style="width:100%; height:30px; float:left;"></div>
-</body>
+<script>new Vue({el: '#ghs_header',data: {message: 'Hello Vue!'},methods:{backroot(){            window.webkit.messageHandlers.popvc.postMessage('qqq');        }}})</script></body>
 </html>

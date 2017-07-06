@@ -60,7 +60,7 @@ input::-webkit-search-cancel-button {
 
 /* search input field */
 input[type=search] {
-	background: #fff url(../img/search-icon.png) no-repeat 0.9em center;
+	background: #fff url(search-icon.png) no-repeat 0.9em center;
 	border: solid 0.1em #fefefe;
 	padding: 0.5em 1em 0.5em 2.5em;
 	-webkit-border-radius: 1em;

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="style.css"/><script src="vue.js"></script>
     
 <title>用户名修改</title>
 
@@ -26,7 +26,7 @@
 </script>
 <!--移动端版本兼容 end -->
 
-<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="jquery.min.js"></script>
 
 	<script type="text/javascript" charset="utf-8">
 
@@ -42,7 +42,7 @@
 <body>
 <!--头部-->
 <div id="ghs_header">
-<div class="pro_return"><a href="setup.html"><img src="img/return.png" border="0"></a></div>
+<div class="pro_return" @click="backroot"><a href="setup.html"><img src="return.png" border="0"></a></div>
 <div class="gys_title">用户名修改</div>
 <div class="in_xiaoxi"><div class="pro_sousuo"></div></div>
 </div>
@@ -50,12 +50,12 @@
 <div id="sz_bank">
   <div class="sz_banklf">用户名：</div>
   <div class="sz_bankrg">
-  <script type="text/javascript" src="js/addclear.js"></script>
+  <script type="text/javascript" src="addclear.js"></script>
    <input type="text" name="search" value="聚镜供货商" id="search_input" style=" width:85%; height:50px; font-size:25px; font-family:'微软雅黑';padding-left:2%;padding-right:13%; border:none; float:left;">
 </div></div>
 <div style="margin-top:28px; float:left; width:94%; height:40px; font-size:20px; padding:0 3%;">仅允许修改一次</div>
 <a href="address_add.html" style="color:#fff">
 <div class="add_button">保存</div></a>
 <div style="width:100%; height:50px; float:left"></div>
-</body>
+<script>new Vue({el: '#ghs_header',data: {message: 'Hello Vue!'},methods:{backroot(){            window.webkit.messageHandlers.popvc.postMessage('qqq');        }}})</script></body>
 </html>

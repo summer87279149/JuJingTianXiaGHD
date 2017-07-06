@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="style.css"/><script src="vue.js"></script>
     
 <title>我的账单</title>
 
@@ -31,42 +31,42 @@
 <body bgcolor="#ececec">
 <!--头部-->
 <div id="ghs_header">
-<div class="pro_return"><a href="mybooks.html"><img src="img/return.png" border="0"></a></div>
+<div class="pro_return" @click="backroot"><a href="mybooks.html"><img src="return.png" border="0"></a></div>
 <div class="gys_title">我的账单</div>
 <div class="in_xiaoxi"><div class="pro_sousuo"></div></div> 
 </div>
 <div style="margin-top:88px; float:left; width:100%;"></div>
 <div class="myzhdan_mtile">本月</div>
-<div class="myzhdan_maindiv"><div class="myzhdan_mdpic"><img src="img/zdc.png"></div><div class="myzhdan_mdfont">
+<div class="myzhdan_maindiv"><div class="myzhdan_mdpic"><img src="zdc.png"></div><div class="myzhdan_mdfont">
   <div class="myzhdan_mdfont1">流水号：170111246606488701785601</div>
   <div class="myzhdan_mdfont2">-433963.00</div>
   <div class="myzhdan_mdfont3">2017年01月11日 支付-提现</div></div></div>
   
-  <div class="myzhdan_maindiv"><div class="myzhdan_mdpic"><img src="img/zdc.png"></div><div class="myzhdan_mdfont">
+  <div class="myzhdan_maindiv"><div class="myzhdan_mdpic"><img src="zdc.png"></div><div class="myzhdan_mdfont">
   <div class="myzhdan_mdfont1">流水号：170111246606488701785601</div>
   <div class="myzhdan_mdfont2">-433963.00</div>
   <div class="myzhdan_mdfont3">2017年01月11日 支付-提现</div></div></div>
   
-  <div class="myzhdan_maindiv"><div class="myzhdan_mdpic"><img src="img/zdj.png"></div><div class="myzhdan_mdfont">
+  <div class="myzhdan_maindiv"><div class="myzhdan_mdpic"><img src="zdj.png"></div><div class="myzhdan_mdfont">
   <div class="myzhdan_mdfont1">流水号：170111246606488701785601</div>
   <div class="myzhdan_mdfont4">+2963.00</div>
   <div class="myzhdan_mdfont3">2017年01月11日 支付-提现</div></div></div>
   
-   <div class="myzhdan_maindiv"><div class="myzhdan_mdpic"><img src="img/zdj.png"></div><div class="myzhdan_mdfont">
+   <div class="myzhdan_maindiv"><div class="myzhdan_mdpic"><img src="zdj.png"></div><div class="myzhdan_mdfont">
   <div class="myzhdan_mdfont1">流水号：170111246606488701785601</div>
   <div class="myzhdan_mdfont4">+63963.00</div>
   <div class="myzhdan_mdfont3">2017年01月11日 支付-提现</div></div></div>
   
-  <div class="myzhdan_maindiv"><div class="myzhdan_mdpic"><img src="img/zdc.png"></div><div class="myzhdan_mdfont">
+  <div class="myzhdan_maindiv"><div class="myzhdan_mdpic"><img src="zdc.png"></div><div class="myzhdan_mdfont">
   <div class="myzhdan_mdfont1">流水号：170111246606488701785601</div>
   <div class="myzhdan_mdfont2">-433963.00</div>
   <div class="myzhdan_mdfont3">2017年01月11日 支付-提现</div></div></div>
   
-  <div class="myzhdan_maindiv"><div class="myzhdan_mdpic"><img src="img/zdc.png"></div><div class="myzhdan_mdfont">
+  <div class="myzhdan_maindiv"><div class="myzhdan_mdpic"><img src="zdc.png"></div><div class="myzhdan_mdfont">
   <div class="myzhdan_mdfont1">流水号：170111246606488701785601</div>
   <div class="myzhdan_mdfont2">-433963.00</div>
   <div class="myzhdan_mdfont3">2017年01月11日 支付-提现</div></div></div>
 
 <div style="width:100%; height:30px; float:left;"></div>
-</body>
+<script>new Vue({el: '#ghs_header',data: {message: 'Hello Vue!'},methods:{backroot(){            window.webkit.messageHandlers.popvc.postMessage('qqq');        }}})</script></body>
 </html>

@@ -4,10 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="css/style.css"/>
-    <link href="css/ui-choose.css" rel="stylesheet" />
-    <link href="css/img.css" type="text/css" rel="stylesheet"/>
-    <link href="css/common1.css" type="text/css" rel="stylesheet"/>
+    <link rel="stylesheet" href="style.css"/><script src="vue.js"></script>
+    <link href="ui-choose.css" rel="stylesheet" />
+    <link href="img.css" type="text/css" rel="stylesheet"/>
+    <link href="common1.css" type="text/css" rel="stylesheet"/>
 <title>意见反馈</title>
 
 <!--移动端版本兼容 -->
@@ -32,7 +32,7 @@
 <body>
 <!--头部-->
 <div id="ghs_header">
-<div class="pro_return"><a href="index.html"><img src="img/return.png" border="0"></a></div>
+<div class="pro_return" @click="backroot"><a href="" ><img src="return.png" border="0"></a></div>
 <div class="gys_title">意见反馈</div>
 <div class="in_xiaoxi"><div class="pro_sousuo"></div></div>
 </div>
@@ -62,8 +62,8 @@
     </div>
 
 	
-<script src="js/jquery-1.10.2.js"></script>
-	<script src="js/ui-choose.js"></script>
+<script src="jquery-1.10.2.js"></script>
+	<script src="ui-choose.js"></script>
 	<script>
 	// 将所有.ui-choose实例化
 	$('.ui-choose').ui_choose();
@@ -93,7 +93,7 @@
 			<section class=" img-section">
 				<div class="z_photo upimg-div clear" >
 		       		               	 <section class="z_file fl">
-		               	 	<img src="img/a11.png" class="add-img">
+		               	 	<img src="a11.png" class="add-img">
 		               	 	<input type="file" name="file" id="file" class="file" value="" accept="image/jpg,image/jpeg,image/png,image/bmp" multiple />
 		               	 </section>
 		         </div>
@@ -105,7 +105,7 @@
 				<p class="check-p"><span class="del-com wsdel-ok">确定</span><span class="wsdel-no">取消</span></p>
 			</div>
 		</aside>
-		<script src="js/imgUp.js"></script>
+		<script src="imgUp.js"></script>
    </div>
    <div class="feedb_select">
      <table width="100%" border="0">
@@ -118,5 +118,5 @@
    <a href="#"><div class="feek_but">提 交</div></a>
 </div>
 <div style="width:100%; height:50px; float:left"></div>
-</body>
+<script>new Vue({el: '#ghs_header',data: {message: 'Hello Vue!'},methods:{backroot(){            window.webkit.messageHandlers.popvc.postMessage('qqq');        }}})</script></body>
 </html>
