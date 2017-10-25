@@ -7,8 +7,8 @@
 //
 #import "BaseViewController.h"
 #import "BaseNavViewController.h"
-@interface BaseViewController ()
-{
+
+@interface BaseViewController (){
     CGRect keyboardRect;
     CGFloat distance;
     BOOL isTransform;
@@ -20,41 +20,36 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     self.view.backgroundColor = [UIColor whiteColor];
     self.automaticallyAdjustsScrollViewInsets = NO;
     isTransform = NO;
 }
 
 #pragma mark - 网络加载动画
-
 -(void)startLoadingAnimation{
-    
-}
--(void)stopLoadingAnimation{
-    
 }
 
+-(void)stopLoadingAnimation{
+}
 
 #pragma mark - 键盘
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyBoardWillHide:) name:UIKeyboardWillHideNotification object:nil];
-    
 //    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(OtherAddressLogin) name:OtherAddressLogin object:nil];
-
 }
+
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
 //    [[NSNotificationCenter defaultCenter] removeObserver:self];
-
 }
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [self.view endEditing:YES];
     [self.view resignFirstResponder];
 }
+
 - (void)keyboardWillShow:(NSNotification *)notification
 {
     UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
@@ -77,8 +72,8 @@
             isTransform = YES;
         }];
     }
-    
 }
+
 -(void)dealWithResponse:(id)response success:(void(^)())success{
     NSString *code = response[@"code"];
     NSString *message = response[@"message"];
@@ -88,13 +83,15 @@
         [MBProgressHUD showError:message];
     }
 }
+
 -(void)keyBoardWillHide:(NSNotification *)notification{
+    
     CGFloat duration = [notification.userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+    
     if (isTransform) {
         [UIView animateWithDuration:duration animations:^{
 //            self.view.transform = CGAffineTransformTranslate(self.view.transform, 0, fabs(distance)+20);
             self.view.frame = CGRectMake(0, 0, kScreenWidth, kScreenHeight);
-
         } completion:^(BOOL finished) {
             isTransform = NO;
         }];

@@ -17,7 +17,6 @@
     NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"bank" ofType:@"plist"];
     NSDictionary* resultDic = [NSDictionary dictionaryWithContentsOfFile:plistPath];
     NSArray *bankBin = resultDic.allKeys;
-    
     //6位Bin号
     NSString* cardbin_6 = [idCard substringWithRange:NSMakeRange(0, 6)];
     //8位Bin号
@@ -31,7 +30,6 @@
         return @"";
     }
     return @"";
-    
 }
 
 /**
@@ -39,7 +37,7 @@
  *  @param name 名称
  *  @return yes / no
  */
--(BOOL)isNameValid:(NSString *)name
++(BOOL)isNameValid:(NSString *)name
 {
     BOOL isValid = NO;
     
@@ -72,8 +70,7 @@
                     isValid = NO;
                 }
             }
-            else if (chr >= 0x4e00 && chr < 0x9fa5)
-            { //中文
+            else if (chr >= 0x4e00 && chr < 0x9fa5){ //中文
                 isValid = YES;
             }
             else
@@ -114,12 +111,13 @@
     NSPredicate *identityCardPredicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",regex2];
     return [identityCardPredicate evaluateWithObject:IDCardNumber];
 }
-+ (BOOL)validateNumber:(NSString *) textString
-{
+
++ (BOOL)validateNumber:(NSString *) textString{
     NSString* number=@"^[0-9]+$";
     NSPredicate *numberPre = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",number];
     return [numberPre evaluateWithObject:textString];
 }
+
 /*车牌号验证 MODIFIED BY HELENSONG*/
 +(BOOL)validateCarNo:(NSString*)carNo
 {

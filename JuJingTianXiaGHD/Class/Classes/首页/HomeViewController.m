@@ -22,6 +22,9 @@
     [self.webView.configuration.userContentController addScriptMessageHandler:self name:@"myAccountCard"];
     [self.webView.configuration.userContentController addScriptMessageHandler:self name:@"myErWeiMa"];
     [self.webView.configuration.userContentController addScriptMessageHandler:self name:@"transports"];
+    
+    
+    
 }
 
 

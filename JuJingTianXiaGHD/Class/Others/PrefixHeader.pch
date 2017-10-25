@@ -157,4 +157,5 @@ return MAXFLOAT;\
 #import "NSDictionary+Log.h"
 #import "NSArray+Log.h"
 #import "UIColor+JKHEX.h"
+#import "XTRequestManager.h"
 #endif /* PrefixHeader_pch */
